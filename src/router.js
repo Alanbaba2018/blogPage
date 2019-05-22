@@ -11,8 +11,14 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
+      children: [{
+        path: '/canvas',
+        name: 'canvas',
+        component: () => import('./views/Canvas/commandTest.vue')
+      }]
     },
+    
     {
       path: '/about',
       name: 'about',

@@ -1,0 +1,14 @@
+$dark-color: #303133;
+$white-color: #ffffff;
+$gray-color: #2c2b2d;
+$gray-light-color: #909399;
+$yellow-light-color: #ffd04b;
+$blue-light-color: #53a8ff;
+
+
+@mixin shadowBottom() {
+  box-shadow: 0 2px 4px 0 rgba(129, 129, 129, 0.5);
+}
+@mixin letterSpace($space) {
+  letter-spacing: $space;
+}

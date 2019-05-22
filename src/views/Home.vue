@@ -1,18 +1,39 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <el-container direction="vertical" class="app-container">
+    <xHeader></xHeader>
+    <el-container class="app-body-container">
+      <xAside></xAside>
+      <el-main class="app-main">
+        <router-view></router-view>
+      </el-main>
+    </el-container>
+  </el-container>
 </template>
-
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import xHeader from './Header/index';
+import xAside from './Aside/index';
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    xHeader,
+    xAside
+  }
+};
+</script>
+<style lang="scss" scoped>
+@import '@/assets/css/variable.scss';
+.app-container {
+  position: relative;
+  height: 100%;
+  .app-body-container {
+    position: relative;
+    height: calc(100% - 50px);
+    .app-main {
+      cursor: pointer;
+      background-color: $gray-light-color;
+    }
   }
 }
-</script>
+</style>
+
