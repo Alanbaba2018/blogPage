@@ -1,15 +1,25 @@
 <template>
-  <div class="wrap">
+  <div class="wrap" @click="showDialog">
     <div class="aside"></div>
     <div class="main"></div>
   </div>
 </template>
 
 <script>
+import * as xCanvas from 'xCanvas';
 export default {
   name: 'commandTest',
   props: {
     msg: String
+  },
+  mounted() {
+    console.log(xCanvas);
+    console.log(this.$showDailog);
+  },
+  methods: {
+    showDialog() {
+      this.$showDailog({content: '大家好'});
+    }
   }
 };
 </script>
@@ -24,10 +34,10 @@ export default {
   width: 100px;
   height: 200px;
   float: left;
-  background-color: #f66;
+  // background-color: #f66;
 }
 .main {
   height: 250px;
-  background-color: #fcc;
+  // background-color: #fcc;
 }
 </style>

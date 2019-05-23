@@ -9232,6 +9232,11 @@ ws@^6.0.0, ws@^6.1.2:
   dependencies:
     async-limiter "~1.0.0"
 
+xCanvas@^1.0.0:
+  version "1.0.0"
+  resolved "http://106.12.89.219:4873/xCanvas/-/xCanvas-1.0.0.tgz#cf54fb3a9455bbf697d499e5d7e068570f26cd97"
+  integrity sha512-rttbHHw+R2sSv+N8Ny8wfhqN2xQxBLuI/EDNXY3oEzMqDfKEVLQ+Ru5QQsJQfsnHDyoJAFGLTyzyUf+QZdZgyg==
+
 xml-name-validator@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/xml-name-validator/-/xml-name-validator-3.0.0.tgz#6ae73e06de4d8c6e47f9fb181f78d648ad457c6a"

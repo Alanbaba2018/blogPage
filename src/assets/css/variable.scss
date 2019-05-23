@@ -1,9 +1,13 @@
 $dark-color: #303133;
 $white-color: #ffffff;
-$gray-color: #2c2b2d;
+$dark-heavy-color: #2c2b2d;
 $gray-light-color: #909399;
+$gray-color: #DCDFE6;
 $yellow-light-color: #ffd04b;
 $blue-light-color: #53a8ff;
+$blue-color: #409EFF;
+
+$dialog-header-color: $blue-color;
 
 
 @mixin shadowBottom() {

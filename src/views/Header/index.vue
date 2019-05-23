@@ -2,7 +2,7 @@
   <el-header class="app-header" height="50px">
     <i class="app-header-logo" :class="weather"></i>
     <span class="app-title-bold">Thought</span>
-    <span class="app-title-light"> Works</span>
+    <span class="app-title-light"> Works —— Alanbaba</span>
   </el-header>
 </template>
 <script>
@@ -13,7 +13,10 @@ export default {
       weather: '',
       weatherEnum: {
         lightRain: 'el-icon-light-rain',
-        sunny: 'el-icon-sunny'
+        sunny: 'el-icon-sunny',
+        light: 'el-icon-lightning',
+        heavyRain: 'el-icon-heavy-rain',
+        cloundy: 'el-icon-cloudy'
       }
     };
   },
@@ -50,8 +53,14 @@ export default {
   .app-header-logo.el-icon-sunny:hover {
     color: $yellow-light-color;
   }
-  .app-header-logo.el-icon-light-rain:hover {
+  .app-header-logo.el-icon-light-rain:hover, .app-header-logo.el-icon-heavy-rain:hover {
     color: $blue-light-color;
+  }
+  .app-header-logo.el-icon-lightning:hover {
+    color: #fee8fb;
+  }
+  .app-header-logo.el-icon-cloudy:hover {
+    color: $gray-color;
   }
 }
 </style>

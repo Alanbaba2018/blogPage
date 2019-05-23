@@ -7,8 +7,8 @@
   },
   "parser": "vue-eslint-parser",
   "parserOptions": {
-    "ecmaVersion": 7,
-    "sourceType": "module"
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
   },
   "rules": {
     "accessor-pairs": 2,

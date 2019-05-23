@@ -59,7 +59,7 @@ export default {
 @import '@/assets/css/variable.scss';
 .app-aside {
   height: 100%;
-  background-color: $gray-color;
+  background-color: $dark-heavy-color;
   .el-menu {
     border-right: none;
   }
