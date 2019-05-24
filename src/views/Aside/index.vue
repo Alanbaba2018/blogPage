@@ -42,8 +42,14 @@
   </el-aside>
 </template>
 <script>
+import api from '@/api';
 export default {
   name: 'xAside',
+  mounted() {
+    api.getMenuData().then(res => {
+      console.log(res);
+    });
+  },
   methods: {
     handleOpen(key, keyPath) {
       console.log(key, keyPath);

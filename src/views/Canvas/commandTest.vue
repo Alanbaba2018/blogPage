@@ -12,10 +12,6 @@ export default {
   props: {
     msg: String
   },
-  mounted() {
-    console.log(xCanvas);
-    console.log(this.$showDailog);
-  },
   methods: {
     showDialog() {
       this.$showDailog({content: '大家好'});
