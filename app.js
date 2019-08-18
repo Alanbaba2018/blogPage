@@ -1,5 +1,5 @@
 const path = require('path');
-const fs= require('fs');
+const fs = require('fs');
 
 const rootPath = path.join(__dirname, './src/lib');
 eachDir(rootPath);
@@ -14,17 +14,15 @@ function eachDir(filePath) {
         fs.stat(innerPath, (err, stats) => {
           if (err) {
             console.log('文件类型判断出错');
-          } else {
-            if (stats.isDirectory()) {
-              eachDir(innerPath);
-            } else if (innerPath.endsWith('.js')){
-              fs.unlink(innerPath, (err) => {
-                err ? console.log(`${innerPath}删除出错`) : console.log(`${innerPath}删除成功`);
-              });
-            }
+          } else if (stats.isDirectory()) {
+            eachDir(innerPath);
+          } else if (innerPath.endsWith('.js')) {
+            fs.unlink(innerPath, (err) => {
+              err ? console.log(`${innerPath}删除出错`) : console.log(`${innerPath}删除成功`);
+            });
           }
-        })
+        });
       }
     }
-  })
+  });
 }
