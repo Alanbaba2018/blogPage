@@ -7,9 +7,9 @@
       </section>
       <section data-markdown data-separator="---" data-separator-vertical="--">
         <script type="text/template">
-          ## 最简单的[demo](http://localhost:8080/#/code)
+          ## 最简单的[demo](http://localhost:8080/code)
           ```javascript
-          const stage = new xCanvas.Stage('stage');
+          const stage = new xCanvas.Stage('stage')
           ```
         </script>
       </section>
