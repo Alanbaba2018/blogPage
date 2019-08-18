@@ -6,7 +6,6 @@ import Code from './views/Code/index.vue';
 Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
   base: '/',
   routes: [
     {

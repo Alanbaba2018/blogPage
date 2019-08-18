@@ -7,14 +7,9 @@
       </section>
       <section data-markdown data-separator="---" data-separator-vertical="--">
         <script type="text/template">
-          ## 最简单的[demo](http://localhost:8080/code)
+          ## 最简单的[demo](http://localhost:8080/#/code)
           ```javascript
-          new Vue({
-            el: '#app',
-            data: {
-              message: 'Hello Vue.js!'
-            }
-          });
+          const stage = new xCanvas.Stage('stage');
           ```
         </script>
       </section>
