@@ -13,7 +13,7 @@ export default new Router({
       path: '/',
       component: Session
     }, {
-      path: '/code',
+      path: '/code/:codeIndex',
       component: Code
     }
   ]

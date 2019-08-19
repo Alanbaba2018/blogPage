@@ -5,12 +5,12 @@
         <div class="code-editor single-panel" id="monaco"></div>
       </el-col>
       <el-col :span="14" class="right-panel">
-        <div class="result-wrap single-panel"></div>
+        <div class="result-wrap single-panel" id="stage" ref="resultPanel"></div>
       </el-col>
     </el-row>
     <el-row :gutter="20" class="handle-row">
       <el-col :span="10">
-        <el-button type="primary" size="small" class="compile-btn">运行</el-button>
+        <el-button type="primary" size="small" class="compile-btn" @click="compile">运行</el-button>
       </el-col>
     </el-row>
   </div>
@@ -21,19 +21,39 @@ import * as monaco from 'monaco-editor/esm/vs/editor/editor.api.js';
 import 'monaco-editor/esm/vs/basic-languages/javascript/javascript.contribution';
 import 'monaco-editor/esm/vs/editor/contrib/find/findController.js';
 // import * as monaco from 'monaco-editor/esm/vs/editor/editor.main.js';
+import Http from '@/api/index.js';
 
 export default {
   name: 'Code',
   data() {
     return {
-      monacoInstance: null
+      editor: null
     };
   },
   mounted() {
-    this.monacoInstance = monaco.editor.create(document.getElementById('monaco'), {
+    this.editor = monaco.editor.create(document.getElementById('monaco'), {
       value: null,
       language: 'javascript'
     });
+    this.initCode();
+  },
+  methods: {
+    initCode() {
+      const index = this.$route.params.codeIndex;
+      Http.getCodeString(index).then(res => {
+        this.editor.setValue(res);
+      });
+    },
+    compile() {
+      const el = this.$refs.resultPanel;
+      const childNodes = el.childNodes;
+      for (let i = childNodes.length - 1; i >= 0; i--) {
+        el.removeChild(childNodes[i]);
+      }
+      const code = this.editor.getValue()
+      const fn = new Function(code);
+      fn.call(this);
+    }
   }
 };
 </script>
@@ -46,6 +66,10 @@ export default {
   .single-panel {
     height: 100%;
     border: 1px solid $gray-light-color;
+  }
+  .result-wrap {
+    position: relative;
+    cursor: pointer;
   }
   .handle-row {
     margin-top: 10px;
