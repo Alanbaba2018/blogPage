@@ -15,9 +15,9 @@
       </section>
       <section data-markdown data-separator="---" data-separator-vertical="--">
         ## 主要内容
-        - 基本语法 <!-- .element: class="fragment" data-fragment-index="1" -->
-        - 组件化 <!-- .element: class="fragment" data-fragment-index="2" -->
-        - 大型应用构建 <!-- .element: class="fragment" data-fragment-index="3" -->
+        - 一些canvas基本用法 <!-- .element: class="fragment" data-fragment-index="1" -->
+        - 一些几何图形算法 <!-- .element: class="fragment" data-fragment-index="2" -->
+        - 交互 = 绘制 + 几何判定 <!-- .element: class="fragment" data-fragment-index="3" -->
       </section>
       <section data-markdown data-separator="---" data-separator-vertical="--">
         <script type="text/template">

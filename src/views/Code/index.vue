@@ -42,6 +42,7 @@ export default {
       const index = this.$route.params.codeIndex;
       Http.getCodeString(index).then(res => {
         this.editor.setValue(res);
+        this.compile();
       });
     },
     compile() {
