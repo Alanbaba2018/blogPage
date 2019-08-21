@@ -2,7 +2,7 @@
   <div class="code-wrap">
     <el-row type="flex" :gutter="20" style="height: 95%">
       <el-col :span="10" class="left-panel">
-        <div class="code-editor single-panel" id="monaco"></div>
+        <div class="code-editor single-panel" id="monaco" ref="codePanel"></div>
       </el-col>
       <el-col :span="14" class="right-panel">
         <div class="result-wrap single-panel" id="stage" ref="resultPanel"></div>
@@ -31,13 +31,32 @@ export default {
     };
   },
   mounted() {
-    this.editor = monaco.editor.create(document.getElementById('monaco'), {
-      value: null,
-      language: 'javascript'
-    });
+    this.initEditor();
     this.initCode();
+    window.addEventListener('resize', this.resize);
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.resize);
   },
   methods: {
+    resize() {
+      this.initEditor();
+      this.compile();
+    },
+    initEditor() {
+      let codes = '';
+      if (this.editor) {
+        codes = this.editor.getValue();
+      }
+      this.$refs.codePanel.innerHTML = "";
+      this.editor = monaco.editor.create(document.getElementById('monaco'), {
+        value: null,
+        language: 'javascript'
+      });
+      if (codes) {
+        this.editor.setValue(codes);
+      }
+    },
     initCode() {
       const index = this.$route.params.codeIndex;
       Http.getCodeString(index).then(res => {
