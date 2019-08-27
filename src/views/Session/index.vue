@@ -21,7 +21,7 @@
       <section data-markdown data-separator="---" data-separator-vertical="--">
         <script type="text/template">
           ## 几何基础算法
-          - [点即向量](http://localhost:8080/code/4?lang=typescript&compile=false)
+          - [点即向量](http://localhost:8080/code/4?lang=typescript&compile=false&mode=default)
           - [点在直线判定](http://localhost:8080/code/5?lang=typescript&compile=false&mode=default)
           - [点在多边形判定](http://localhost:8080/code/6?lang=typescript&compile=false&mode=default)
           - 两个矩形相交判断 即 判断两个矩形的外包矩形的宽高是否小于两个矩形宽高分别相加
